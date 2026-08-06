@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>SalesCompass AI</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Syne:wght@400;600;700;800&display=swap');
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --orange:#C07818;
+  --orange-dark:#7A3200;
+  --orange-light:#FDF3E3;
+  --orange-mid:#F0C070;
+  --dark:#1A1A1A;
+  --gray:#555;
+  --gray-light:#F5F5F5;
+  --gray-mid:#E0E0E0;
+  --white:#ffffff;
+  --radius:14px;
+}
+body{
+  font-family:'Syne',sans-serif;
+  background:linear-gradient(135deg,#FFF8EE 0%,#FFF3E0 50%,#FFF8F0 100%);
+  min-height:100vh;
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;padding:16px;
+}
+.login-wrap{
+  width:100%;max-width:400px;
+  background:var(--white);
+  border-radius:var(--radius);
+  box-shadow:0 8px 40px rgba(0,0,0,0.12);
+  overflow:hidden;
+}
+.login-header{
+  background:var(--orange-dark);
+  padding:28px 24px;text-align:center;
+}
+.login-header h1{font-size:22px;font-weight:800;color:var(--white);margin-bottom:4px}
+.login-header p{font-size:12px;color:#FFD580;font-family:'DM Mono',monospace}
+.login-body{padding:28px 24px}
+.login-body label{font-size:12px;color:var(--gray);font-family:'DM Mono',monospace;display:block;margin-bottom:6px}
+.login-body input{
+  width:100%;padding:10px 14px;
+  border:1.5px solid var(--gray-mid);
+  border-radius:10px;
+  font-family:'Syne',sans-serif;font-size:14px;
+  outline:none;transition:border-color 0.2s;margin-bottom:16px;
+}
+.login-body input:focus{border-color:var(--orange)}
+.login-btn{
+  width:100%;padding:12px;
+  background:var(--orange-dark);color:var(--white);
+  border:none;border-radius:10px;
+  font-family:'Syne',sans-serif;font-size:14px;font-weight:700;
+  cursor:pointer;transition:opacity 0.15s;
+}
+.login-btn:hover{opacity:0.85}
+.login-error{font-size:12px;color:#D32F2F;text-align:center;margin-top:10px;display:none}
+.login-note{font-size:11px;color:var(--gray);text-align:center;margin-top:12px;font-family:'DM Mono',monospace}
+.wrap{width:100%;max-width:520px;display:none;flex-direction:column;gap:12px}
+.brand{display:flex;align-items:center;gap:10px;padding:0 4px}
+.brand-logo{
+  width:36px;height:36px;background:var(--orange-dark);
+  border-radius:10px;display:flex;align-items:center;justify-content:center;
+  box-shadow:0 4px 12px rgba(122,50,0,0.35);
+}
+.brand-logo svg{width:20px;height:20px}
+.brand-name{font-size:18px;font-weight:800;color:var(--dark)}
+.brand-name span{color:var(--orange)}
+.brand-right{margin-left:auto;display:flex;align-items:center;gap:8px}
+.user-badge{font-family:'DM Mono',monospace;font-size:10px;padding:3px 9px;border-radius:20px;font-weight:500}
+.user-badge.distribution{background:#E8F5D8;color:#3B6D11}
+.user-badge.sales{background:#E8F0FE;color:#1967D2}
+.logout-btn{font-size:11px;color:var(--gray);font-family:'DM Mono',monospace;cursor:pointer;text-decoration:underline;background:none;border:none}
+.chatbox{
+  background:var(--white);border-radius:var(--radius);
+  box-shadow:0 8px 40px rgba(0,0,0,0.10);
+  overflow:hidden;display:flex;flex-direction:column;
+  height:72vh;max-height:600px;
+}
+.chat-hdr{
+  background:var(--orange-dark);padding:14px 16px;
+  display:flex;align-items:center;gap:10px;flex-shrink:0;
+}
+.chat-hdr-av{
+  width:34px;height:34px;background:rgba(255,255,255,0.2);
+  border-radius:50%;display:flex;align-items:center;justify-content:center;
+  font-family:'DM Mono',monospace;font-size:11px;color:white;
+}
+.chat-hdr-name{font-size:14px;font-weight:700;color:white}
+.chat-hdr-sub{font-size:11px;color:rgba(255,255,255,0.7);font-family:'DM Mono',monospace;margin-top:1px}
+.chat-hdr-dot{width:8px;height:8px;background:#A8E063;border-radius:50%;box-shadow:0 0 6px #A8E063;margin-left:auto}
+.chips{
+  display:flex;gap:7px;padding:10px 12px;overflow-x:auto;
+  border-bottom:1px solid var(--gray-mid);flex-shrink:0;
+  scrollbar-width:none;background:#FFFCF7;
+}
+.chips::-webkit-scrollbar{display:none}
+.chip{
+  font-size:11px;font-family:'DM Mono',monospace;color:var(--orange);
+  border:1px solid var(--orange-mid);background:var(--orange-light);
+  padding:5px 11px;border-radius:20px;white-space:nowrap;
+  cursor:pointer;transition:all 0.15s;flex-shrink:0;
+}
+.chip:hover{background:var(--orange-dark);color:white;border-color:var(--orange-dark)}
+.msgs{
+  flex:1;overflow-y:auto;padding:16px 14px;
+  display:flex;flex-direction:column;gap:14px;
+  background:#FEFEFE;scrollbar-width:thin;
+}
+.msg{display:flex;gap:8px;align-items:flex-start}
+.msg.usr{flex-direction:row-reverse}
+.av{
+  width:28px;height:28px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:10px;font-weight:600;flex-shrink:0;
+  font-family:'DM Mono',monospace;
+}
+.av.bot{background:var(--orange-light);color:var(--orange-dark);border:1px solid var(--orange-mid)}
+.av.usr{background:#E8F0FE;color:#1967D2}
+.bub{
+  max-width:82%;padding:10px 13px;border-radius:14px;
+  font-size:13px;line-height:1.65;color:var(--dark);white-space:pre-wrap;
+}
+.bub.bot{background:var(--gray-light);border:1px solid var(--gray-mid);border-top-left-radius:4px}
+.bub.usr{background:var(--orange-light);border:1px solid var(--orange-mid);color:#4A2800;border-top-right-radius:4px}
+.typing{display:flex;gap:5px;align-items:center;padding:2px 0}
+.dot{width:6px;height:6px;background:var(--orange);border-radius:50%;animation:bounce 1.2s infinite}
+.dot:nth-child(2){animation-delay:0.2s}
+.dot:nth-child(3){animation-delay:0.4s}
+@keyframes bounce{0%,60%,100%{transform:translateY(0)}30%{transform:translateY(-5px)}}
+.ftr{
+  padding:10px 12px;border-top:1px solid var(--gray-mid);
+  display:flex;gap:8px;align-items:flex-end;flex-shrink:0;background:white;
+}
+.inp{
+  flex:1;resize:none;font-family:'Syne',sans-serif;font-size:13px;
+  padding:9px 13px;border-radius:10px;border:1.5px solid var(--gray-mid);
+  background:var(--gray-light);color:var(--dark);outline:none;
+  min-height:40px;max-height:100px;line-height:1.5;transition:border-color 0.2s;
+}
+.inp::placeholder{color:#AAAAAA}
+.inp:focus{border-color:var(--orange);background:white}
+.snd{
+  width:40px;height:40px;background:var(--orange-dark);border:none;
+  border-radius:10px;cursor:pointer;display:flex;align-items:center;
+  justify-content:center;flex-shrink:0;transition:all 0.15s;
+  box-shadow:0 3px 10px rgba(122,50,0,0.4);
+}
+.snd:hover{transform:translateY(-1px)}
+.snd svg{width:17px;height:17px;fill:white}
+.footnote{text-align:center;font-size:11px;color:#AAAAAA;font-family:'DM Mono',monospace;padding:0 4px}
+@media(max-width:480px){body{padding:10px;justify-content:flex-start;padding-top:20px}.chatbox{height:78vh}}
+</style>
+</head>
+<body>
+
+<div class="login-wrap" id="loginWrap">
+  <div class="login-header">
+    <h1>SalesCompass AI</h1>
+    <p>product catalogue agent · upgrade firm</p>
+  </div>
+  <div class="login-body">
+    <label>Enter your team password</label>
+    <input type="password" id="passwordInput" placeholder="Enter password..." onkeydown="if(event.key==='Enter')doLogin()"/>
+    <button class="login-btn" onclick="doLogin()">Login</button>
+    <div class="login-error" id="loginError">Invalid password. Please try again.</div>
+    <div class="login-note">Distribution team and Sales team have separate passwords</div>
+  </div>
+</div>
+
+<div class="wrap" id="chatWrap">
+  <div class="brand">
+    <div class="brand-logo">
+      <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"/><path d="M16.2 7.8l-2 6.3-6.4 2 2-6.3z"/>
+      </svg>
+    </div>
+    <div class="brand-name">Sales<span>Compass</span> AI</div>
+    <div class="brand-right">
+      <span class="user-badge" id="userBadge"></span>
+      <button class="logout-btn" onclick="doLogout()">logout</button>
+    </div>
+  </div>
+
+  <div class="chatbox">
+    <div class="chat-hdr">
+      <div class="chat-hdr-av">SC</div>
+      <div>
+        <div class="chat-hdr-name">Product Catalogue Agent</div>
+        <div class="chat-hdr-sub">RAG-powered · specs · pricing · comparisons</div>
+      </div>
+      <div class="chat-hdr-dot"></div>
+    </div>
+
+    <div class="chips" id="chips">
+      <div class="chip">What is SKU GH-001?</div>
+      <div class="chip">Compare PT-001 vs PT-002</div>
+      <div class="chip">Show all Power Tools</div>
+      <div class="chip">Which cement is best?</div>
+      <div class="chip">Low stock items</div>
+      <div class="chip">Waterproofing products</div>
+      <div class="chip">Cheapest plumbing SKU</div>
+    </div>
+
+    <div class="msgs" id="msgs">
+      <div class="msg">
+        <div class="av bot">SC</div>
+        <div><div class="bub bot">👋 Hello! I am SalesCompass AI, your instant product knowledge agent for Upgrade Firm.
+
+Ask me anything about our 60+ products across 8 categories — specs, pricing, stock, or comparisons. Tap a suggestion above to get started!</div></div>
+      </div>
+    </div>
+
+    <div class="ftr">
+      <textarea class="inp" id="inp" rows="1" placeholder="Ask about any SKU, spec, or comparison…"></textarea>
+      <button class="snd" onclick="sendMsg()">
+        <svg viewBox="0 0 24 24"><path d="M22 2L11 13M22 2L15 22l-4-9-9-4 20-7z"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="footnote">SalesCompass AI · Upgrade Firm · Powered by Groq</div>
+</div>
+
+<script>
+async function doLogin(){
+  const pw = document.getElementById('passwordInput').value;
+  const err = document.getElementById('loginError');
+  err.style.display = 'none';
+  try {
+    const res = await fetch('/api/login',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({password:pw})
+    });
+    const data = await res.json();
+    if(data.success){
+      document.getElementById('loginWrap').style.display='none';
+      const cw = document.getElementById('chatWrap');
+      cw.style.display='flex';
+      const badge = document.getElementById('userBadge');
+      badge.textContent = data.user_type.toUpperCase();
+      badge.className = 'user-badge '+data.user_type;
+      addMsg('bot','✅ '+data.message);
+    } else {
+      err.style.display='block';
+    }
+  } catch(e){ err.textContent='Connection error.'; err.style.display='block'; }
+}
+
+async function doLogout(){
+  await fetch('/api/logout',{method:'POST'});
+  document.getElementById('chatWrap').style.display='none';
+  document.getElementById('loginWrap').style.display='block';
+  document.getElementById('passwordInput').value='';
+  document.getElementById('msgs').innerHTML=`<div class="msg"><div class="av bot">SC</div><div><div class="bub bot">👋 Hello! I am SalesCompass AI, your instant product knowledge agent for Upgrade Firm.\n\nAsk me anything about our 60+ products across 8 categories — specs, pricing, stock, or comparisons. Tap a suggestion above to get started!</div></div></div>`;
+}
+
+function addMsg(role,text){
+  const el=document.createElement('div');
+  el.className='msg'+(role==='usr'?' usr':'');
+  const av=role==='usr'?'<div class="av usr">You</div>':'<div class="av bot">SC</div>';
+  const bub=`<div class="bub ${role}">${text}</div>`;
+  el.innerHTML=role==='usr'?`${bub}${av}`:`${av}<div>${bub}</div>`;
+  document.getElementById('msgs').appendChild(el);
+  document.getElementById('msgs').scrollTop=99999;
+}
+
+function addTyping(){
+  const el=document.createElement('div');
+  el.className='msg';el.id='typing';
+  el.innerHTML=`<div class="av bot">SC</div><div><div class="bub bot"><div class="typing"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div></div></div>`;
+  document.getElementById('msgs').appendChild(el);
+  document.getElementById('msgs').scrollTop=99999;
+}
+
+async function sendMsg(){
+  const inp=document.getElementById('inp');
+  const msg=inp.value.trim();
+  if(!msg)return;
+  inp.value='';inp.style.height='';
+  addMsg('usr',msg);
+  addTyping();
+  try {
+    const res=await fetch('/api/chat',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({message:msg})
+    });
+    const data=await res.json();
+    document.getElementById('typing')?.remove();
+    addMsg('bot',data.error?'❌ '+data.error:data.response);
+  } catch(e){
+    document.getElementById('typing')?.remove();
+    addMsg('bot','❌ Connection error. Please try again.');
+  }
+}
+
+document.getElementById('inp').addEventListener('keydown',e=>{
+  if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();sendMsg();}
+});
+document.getElementById('inp').addEventListener('input',function(){
+  this.style.height='auto';
+  this.style.height=Math.min(this.scrollHeight,100)+'px';
+});
+document.getElementById('chips').addEventListener('click',e=>{
+  if(e.target.classList.contains('chip')){
+    document.getElementById('inp').value=e.target.textContent;
+    sendMsg();
+  }
+});
+</script>
+</body>
+</html>

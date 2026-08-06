@@ -1,0 +1,107 @@
+{
+  "company": "Upgrade Firm",
+  "categories": [
+    {
+      "name": "General Hardware",
+      "products": [
+        {"sku": "GH-001", "name": "Heavy Duty Hammer 500g", "specs": "Weight: 500g, Handle: Fibreglass, Head: Carbon Steel", "retail_price": 450, "distribution_price": 380, "stock": "In Stock"},
+        {"sku": "GH-002", "name": "Screwdriver Set 12pc", "specs": "12 pieces, Phillips & Flathead, Chrome Vanadium Steel", "retail_price": 699, "distribution_price": 580, "stock": "In Stock"},
+        {"sku": "GH-003", "name": "Adjustable Spanner 12 inch", "specs": "Length: 12 inch, Jaw opening: 32mm, Chrome plated", "retail_price": 320, "distribution_price": 260, "stock": "In Stock"},
+        {"sku": "GH-004", "name": "Tape Measure 10m", "specs": "Length: 10m, Width: 25mm, Auto-lock, Belt clip", "retail_price": 199, "distribution_price": 155, "stock": "In Stock"},
+        {"sku": "GH-005", "name": "Spirit Level 600mm", "specs": "Length: 600mm, 3 vials, Aluminium body, Accuracy: 0.5mm/m", "retail_price": 550, "distribution_price": 450, "stock": "In Stock"},
+        {"sku": "GH-006", "name": "Bolt Cutter 600mm", "specs": "Length: 600mm, Cuts up to 10mm rod, Drop forged steel", "retail_price": 1200, "distribution_price": 980, "stock": "In Stock"},
+        {"sku": "GH-007", "name": "Hand Saw 22 inch", "specs": "Length: 22 inch, 8 TPI, Hardened teeth, Soft grip handle", "retail_price": 380, "distribution_price": 310, "stock": "In Stock"},
+        {"sku": "GH-008", "name": "Pliers Set 3pc", "specs": "3 piece set: Combination, Long Nose, Side Cutting, Chrome Vanadium", "retail_price": 599, "distribution_price": 490, "stock": "Low Stock"},
+        {"sku": "GH-009", "name": "Safety Gloves Cut Resistant L", "specs": "Size: Large, Cut Level 5, HPPE material, EN388 certified", "retail_price": 299, "distribution_price": 240, "stock": "In Stock"},
+        {"sku": "GH-010", "name": "Tool Box 3 Drawer 450mm", "specs": "3 drawers, 450mm width, Steel body, Ball bearing slides", "retail_price": 2500, "distribution_price": 2100, "stock": "In Stock"}
+      ]
+    },
+    {
+      "name": "Interiors",
+      "products": [
+        {"sku": "IN-001", "name": "Gypsum Board 12mm 8x4ft", "specs": "Size: 8x4ft, Thickness: 12mm, Fire resistant, Moisture resistant", "retail_price": 650, "distribution_price": 530, "stock": "In Stock"},
+        {"sku": "IN-002", "name": "False Ceiling Grid System", "specs": "Coverage: 10sqft, Aluminium T-grid, White powder coated", "retail_price": 450, "distribution_price": 370, "stock": "In Stock"},
+        {"sku": "IN-003", "name": "Wall Putty 20kg", "specs": "Weight: 20kg, White cement base, Interior use, Coverage: 100sqft", "retail_price": 780, "distribution_price": 640, "stock": "In Stock"},
+        {"sku": "IN-004", "name": "PVC Wall Panel 8x4ft", "specs": "Size: 8x4ft, Thickness: 5mm, Waterproof, UV resistant", "retail_price": 1200, "distribution_price": 980, "stock": "In Stock"},
+        {"sku": "IN-005", "name": "Wooden Laminate Flooring 12mm", "specs": "Thickness: 12mm, AC4 rating, Click lock system, Coverage: 2.4sqm/box", "retail_price": 2200, "distribution_price": 1800, "stock": "In Stock"},
+        {"sku": "IN-006", "name": "Ceiling Paint 20L White", "specs": "Volume: 20L, Coverage: 200sqm, Washable, Low VOC", "retail_price": 3500, "distribution_price": 2900, "stock": "In Stock"},
+        {"sku": "IN-007", "name": "Cornice Moulding 3m", "specs": "Length: 3m, Material: Polyurethane, Paintable, Self adhesive", "retail_price": 350, "distribution_price": 280, "stock": "In Stock"},
+        {"sku": "IN-008", "name": "Glass Wool Insulation 50mm", "specs": "Thickness: 50mm, Density: 16kg/m3, Roll: 10sqm, Fire resistant", "retail_price": 1800, "distribution_price": 1480, "stock": "Low Stock"}
+      ]
+    },
+    {
+      "name": "Power Tools",
+      "products": [
+        {"sku": "PT-001", "name": "Angle Grinder 4 inch 850W", "specs": "Power: 850W, Disc size: 4 inch, No load speed: 11000rpm, Weight: 1.8kg", "retail_price": 2800, "distribution_price": 2300, "stock": "In Stock"},
+        {"sku": "PT-002", "name": "Cordless Drill 18V 2Ah", "specs": "Voltage: 18V, Battery: 2Ah Li-Ion, Chuck: 13mm, Torque: 45Nm", "retail_price": 4500, "distribution_price": 3700, "stock": "In Stock"},
+        {"sku": "PT-003", "name": "Jigsaw 650W Variable Speed", "specs": "Power: 650W, Stroke: 26mm, Speed: 500-3100spm, Orbital action", "retail_price": 3200, "distribution_price": 2650, "stock": "In Stock"},
+        {"sku": "PT-004", "name": "Rotary Hammer Drill 800W SDS", "specs": "Power: 800W, Impact energy: 2.8J, Chuck: SDS Plus, 3 modes", "retail_price": 5500, "distribution_price": 4500, "stock": "In Stock"},
+        {"sku": "PT-005", "name": "Circular Saw 7.25 inch 1400W", "specs": "Power: 1400W, Blade: 7.25 inch, Cutting depth: 63mm, Laser guide", "retail_price": 4200, "distribution_price": 3450, "stock": "In Stock"},
+        {"sku": "PT-006", "name": "Random Orbital Sander 300W", "specs": "Power: 300W, Pad size: 125mm, Orbits: 12000opm, Dust collection", "retail_price": 2500, "distribution_price": 2050, "stock": "In Stock"},
+        {"sku": "PT-007", "name": "Heat Gun 2000W Variable", "specs": "Power: 2000W, Temperature: 50-650C, 2 speed settings, LCD display", "retail_price": 1800, "distribution_price": 1480, "stock": "In Stock"},
+        {"sku": "PT-008", "name": "Air Compressor 24L 1.5HP", "specs": "Power: 1.5HP, Tank: 24L, Max pressure: 8bar, Oil free pump", "retail_price": 8500, "distribution_price": 7000, "stock": "Low Stock"}
+      ]
+    },
+    {
+      "name": "Roofing & Cladding",
+      "products": [
+        {"sku": "RC-001", "name": "Galvanised Roofing Sheet 8ft", "specs": "Length: 8ft, Thickness: 0.45mm, Galvanised steel, Corrugated profile", "retail_price": 850, "distribution_price": 700, "stock": "In Stock"},
+        {"sku": "RC-002", "name": "Polycarbonate Sheet Clear 10ft", "specs": "Length: 10ft, Thickness: 2mm, UV protected, Light transmission: 90%", "retail_price": 1200, "distribution_price": 980, "stock": "In Stock"},
+        {"sku": "RC-003", "name": "Ridge Cap Galvanised 8ft", "specs": "Length: 8ft, Galvanised steel, Fits 76mm corrugated sheets", "retail_price": 350, "distribution_price": 285, "stock": "In Stock"},
+        {"sku": "RC-004", "name": "Fibre Cement Cladding 12mm", "specs": "Size: 3000x200mm, Thickness: 12mm, Weather resistant, Paintable", "retail_price": 980, "distribution_price": 800, "stock": "In Stock"},
+        {"sku": "RC-005", "name": "Bitumen Waterproof Membrane 4m", "specs": "Width: 1m, Length: 4m, Thickness: 3mm, Self adhesive, APP modified", "retail_price": 1500, "distribution_price": 1230, "stock": "In Stock"},
+        {"sku": "RC-006", "name": "Metal Cladding Clip Set 100pc", "specs": "100 pieces, Stainless steel, Hidden fix system, For 150-200mm boards", "retail_price": 650, "distribution_price": 530, "stock": "In Stock"}
+      ]
+    },
+    {
+      "name": "Construction Chemicals",
+      "products": [
+        {"sku": "CC-001", "name": "Waterproofing Coating 20kg", "specs": "Weight: 20kg, Cementitious 2-component, Coverage: 2kg/sqm 2 coats", "retail_price": 2800, "distribution_price": 2300, "stock": "In Stock"},
+        {"sku": "CC-002", "name": "Tile Adhesive C1 20kg", "specs": "Weight: 20kg, Class C1, Coverage: 4-5sqm, Open time: 20min", "retail_price": 480, "distribution_price": 390, "stock": "In Stock"},
+        {"sku": "CC-003", "name": "Tile Adhesive C2 20kg", "specs": "Weight: 20kg, Class C2, Coverage: 3-4sqm, For large format tiles", "retail_price": 680, "distribution_price": 560, "stock": "In Stock"},
+        {"sku": "CC-004", "name": "Epoxy Grout 1kg", "specs": "Weight: 1kg, 2-component, Chemical resistant, For 2-20mm joints", "retail_price": 850, "distribution_price": 700, "stock": "In Stock"},
+        {"sku": "CC-005", "name": "Concrete Bonding Agent 1L", "specs": "Volume: 1L, SBR based, Coverage: 5-8sqm, Improves adhesion", "retail_price": 320, "distribution_price": 260, "stock": "In Stock"},
+        {"sku": "CC-006", "name": "Crack Filler Ready Mix 1kg", "specs": "Weight: 1kg, Ready to use, Interior/Exterior, Paintable when dry", "retail_price": 180, "distribution_price": 145, "stock": "In Stock"},
+        {"sku": "CC-007", "name": "Curing Compound 20L", "specs": "Volume: 20L, Wax based, Coverage: 50sqm, Prevents moisture loss", "retail_price": 2200, "distribution_price": 1800, "stock": "In Stock"},
+        {"sku": "CC-008", "name": "Anti-Corrosion Primer 1L", "specs": "Volume: 1L, Red oxide, Coverage: 10sqm, Fast drying 1hr recoat", "retail_price": 380, "distribution_price": 310, "stock": "Low Stock"}
+      ]
+    },
+    {
+      "name": "Cleaning Solutions",
+      "products": [
+        {"sku": "CL-001", "name": "Heavy Duty Degreaser 5L", "specs": "Volume: 5L, Concentrate 1:10 dilution, pH: 12, Biodegradable", "retail_price": 950, "distribution_price": 780, "stock": "In Stock"},
+        {"sku": "CL-002", "name": "Acid Descaler 1L", "specs": "Volume: 1L, Phosphoric acid based, Removes rust and scale, Safe on tiles", "retail_price": 280, "distribution_price": 228, "stock": "In Stock"},
+        {"sku": "CL-003", "name": "Floor Cleaner Concentrate 5L", "specs": "Volume: 5L, pH neutral, Suitable for marble granite vinyl, Pleasant fragrance", "retail_price": 750, "distribution_price": 615, "stock": "In Stock"},
+        {"sku": "CL-004", "name": "Glass Cleaner 500ml", "specs": "Volume: 500ml, Streak free, Ammonia free, Ready to use spray", "retail_price": 120, "distribution_price": 95, "stock": "In Stock"},
+        {"sku": "CL-005", "name": "Industrial Hand Cleaner 3L", "specs": "Volume: 3L, Removes grease oil paint, With moisturiser, Pumice free", "retail_price": 550, "distribution_price": 450, "stock": "In Stock"},
+        {"sku": "CL-006", "name": "Disinfectant Concentrate 5L", "specs": "Volume: 5L, Kills 99.9% bacteria, Hospital grade, Dilution 1:20", "retail_price": 1200, "distribution_price": 980, "stock": "In Stock"}
+      ]
+    },
+    {
+      "name": "Plumbing & Sanitaryware",
+      "products": [
+        {"sku": "PS-001", "name": "CPVC Pipe 1 inch 3m", "specs": "Diameter: 1 inch, Length: 3m, Pressure rating: 10 bar, Hot and cold water", "retail_price": 320, "distribution_price": 260, "stock": "In Stock"},
+        {"sku": "PS-002", "name": "Ball Valve 1 inch Brass", "specs": "Size: 1 inch, Body: Brass, Handle: Lever, Pressure: 20 bar", "retail_price": 280, "distribution_price": 228, "stock": "In Stock"},
+        {"sku": "PS-003", "name": "Wash Basin White 550mm", "specs": "Size: 550x450mm, Material: Vitreous China, Wall hung, 1 tap hole", "retail_price": 2800, "distribution_price": 2300, "stock": "In Stock"},
+        {"sku": "PS-004", "name": "EWC Toilet Suite P-Trap", "specs": "P-Trap, Dual flush 3/6L, Soft close seat, White vitreous china", "retail_price": 8500, "distribution_price": 7000, "stock": "In Stock"},
+        {"sku": "PS-005", "name": "CPVC Elbow 1 inch 90 degree", "specs": "Size: 1 inch, 90 degree, Pressure: 10 bar, Solvent weld", "retail_price": 35, "distribution_price": 28, "stock": "In Stock"},
+        {"sku": "PS-006", "name": "Shower Panel Stainless Steel", "specs": "Height: 1200mm, Rainfall head 250mm, Hand shower, Body jets 6", "retail_price": 12000, "distribution_price": 9800, "stock": "Low Stock"},
+        {"sku": "PS-007", "name": "Water Tank 500L Loft", "specs": "Capacity: 500L, Material: LLDPE, UV stabilised, Inlet outlet fittings", "retail_price": 3800, "distribution_price": 3100, "stock": "In Stock"},
+        {"sku": "PS-008", "name": "Bathroom Faucet Single Lever", "specs": "Type: Single lever basin mixer, Chrome finish, Quarter turn ceramic disc", "retail_price": 1800, "distribution_price": 1480, "stock": "In Stock"}
+      ]
+    },
+    {
+      "name": "Steel & Cement",
+      "products": [
+        {"sku": "SC-001", "name": "TMT Steel Bar 10mm 12m", "specs": "Diameter: 10mm, Length: 12m, Grade: Fe500, Weight: 7.4kg/bar", "retail_price": 620, "distribution_price": 510, "stock": "In Stock"},
+        {"sku": "SC-002", "name": "TMT Steel Bar 12mm 12m", "specs": "Diameter: 12mm, Length: 12m, Grade: Fe500, Weight: 10.6kg/bar", "retail_price": 890, "distribution_price": 730, "stock": "In Stock"},
+        {"sku": "SC-003", "name": "TMT Steel Bar 16mm 12m", "specs": "Diameter: 16mm, Length: 12m, Grade: Fe500, Weight: 18.9kg/bar", "retail_price": 1580, "distribution_price": 1300, "stock": "In Stock"},
+        {"sku": "SC-004", "name": "OPC Cement 50kg", "specs": "Weight: 50kg, Grade: 53, OPC, Initial setting: 30min, IS:269", "retail_price": 420, "distribution_price": 345, "stock": "In Stock"},
+        {"sku": "SC-005", "name": "PPC Cement 50kg", "specs": "Weight: 50kg, Portland Pozzolana, Low heat, Fly ash based, IS:1489", "retail_price": 400, "distribution_price": 328, "stock": "In Stock"},
+        {"sku": "SC-006", "name": "MS Flat Bar 50x6mm 6m", "specs": "Size: 50x6mm, Length: 6m, Mild steel, Weight: 14.1kg", "retail_price": 980, "distribution_price": 805, "stock": "In Stock"},
+        {"sku": "SC-007", "name": "GI Wire 16 Gauge 5kg", "specs": "Gauge: 16, Weight: 5kg, Galvanised, Binding wire for construction", "retail_price": 480, "distribution_price": 394, "stock": "In Stock"},
+        {"sku": "SC-008", "name": "Steel Angle 50x50x6mm 6m", "specs": "Size: 50x50x6mm, Length: 6m, Mild steel, Weight: 27.4kg", "retail_price": 2200, "distribution_price": 1810, "stock": "Low Stock"}
+      ]
+    }
+  ]
+}
